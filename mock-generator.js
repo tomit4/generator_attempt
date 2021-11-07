@@ -10,6 +10,26 @@ const emailsArr = [
     'totallylegit@pets.com',
 ]
 
+const responsePrompts = [
+    'I am actually a very experienced cat',
+    'I am not a person but I need a job',
+    'This job posting is awful',
+    '30',
+    '50',
+    '70',
+    '80',
+    '100',
+]
+
+const responseKeyCategories = ['grit', 'openness', 'empath']
+
+const responseKeyPrompts = [
+    'what is your name',
+    'what is your favorite color',
+    'what is your quest',
+    'what is the average flight speed of an unladen swallow',
+]
+
 const randomNumber = max => {
     return Math.floor(Math.random() * max) < 1
         ? 1
