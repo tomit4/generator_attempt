@@ -10,7 +10,7 @@ const emailsArr = [
     'totallylegit@pets.com',
 ]
 
-const responsePrompts = [
+const responseValues = [
     'I am actually a very experienced cat',
     'I am not a person but I need a job',
     'This job posting is awful',
@@ -42,10 +42,10 @@ const n = 10
 class User {
     constructor(id) {
         this.user_id = id
-        this.user_name = namesArr[randomNumber(namesArr, 0)]
-        this.user_email = emailsArr[randomNumber(emailsArr, 0)]
-        this.is_admin = Math.random() < 0.2
-        this.is_poster = Math.random() < 0.9 // If user is poster, generate 2 profiles
+        this.user_name
+        this.user_email
+        this.is_admin
+        this.is_poster
     }
 }
 
@@ -81,33 +81,48 @@ const mock = {
     responses: [],
 }
 
-for (let i = 0; i < n; i++) {
+// Main for loop that generates the majority of the mock
+for (let i = 1; i < n; i++) {
+    // Generates our new User first
     const newUser = new User(i + 1)
-    mock.users.push(newUser)
+    newUser.user_name = namesArr[randomNumber(namesArr.length)]
+    newUser.user_email = emailsArr[randomNumber(emailsArr.length)]
+    newUser.is_admin = Math.random() < 0.2
+    newUser.is_poster = Math.random() < 0.7
+
+    // Then generate a new profile
     const newProfile = new Profile(i + 1)
     newProfile.user_id = newUser.user_id
+
+    // Then generate a response key
+    const newResponseKey = new ResponseKey(i)
+    newResponseKey.response_key_category =
+        responseKeyCategories[randomNumber(responseKeyCategories.length)]
+    newResponseKey.response_key_prompt =
+        responseKeyPrompts[randomNumber(responseKeyPrompts.length)]
+
+    // Then generate a new Response
+    const newResponse = new Response(i)
+    newResponse.profile_id = newProfile.profile_id
+    newResponse.response_key_id = newResponseKey.response_key_id
+    newResponse.val = responseValues[randomNumber(responseValues.length)]
+
+    // Finally we push it all to our mock object
+    mock.users.push(newUser)
     mock.profiles.push(newProfile)
+    mock.response_keys.push(newResponseKey)
+    mock.responses.push(newResponse)
 }
 
+// for loop that goes over the finished mock.users[] array and checks to see if the is_poster flag is true or false
 for (let i = 0; i < mock.users.length; i++) {
     if (mock.users[i].is_poster) {
+        // if the user is_poster, create another profile for that user, there is a 70% chance user is poster (see user.is_poster in previous for loop)
         const newProfile = new Profile(i + 1)
         newProfile.user_id = mock.users[i].user_id
         mock.profiles.push(newProfile)
     }
 }
-
-console.log(mock)
-console.log(mock.users.length)
-console.log(mock.profiles.length)
-
-// create a for loop that creates n number of users, n number of profiles, n number of response_ keys, and 12 responses each.
-// if the users is_poster value is equal to 1, then generate a second profile for that user
-
-// consider how to generate the mock object, you can just instiate it as below like we did before, but there might be a better way
-// of accomplishing this task.
-
-// mock is the final object to be written, a series of users, profiles, response_keys, and responses with arrays as values
 
 const mockData = JSON.stringify(mock, null, 2)
 fs.writeFileSync('mock.json', mockData)

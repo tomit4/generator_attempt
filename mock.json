@@ -2,52 +2,72 @@
   "users": [
     {
       "user_id": 1,
+      "user_name": "archie",
+      "user_email": "ar_cat@hires.com",
       "is_admin": false,
       "is_poster": true
     },
     {
       "user_id": 2,
-      "is_admin": false,
+      "user_name": "archie",
+      "user_email": "user_sample@doggo.com",
+      "is_admin": true,
       "is_poster": true
     },
     {
       "user_id": 3,
+      "user_name": "archie",
+      "user_email": "user_sample@doggo.com",
       "is_admin": false,
       "is_poster": true
     },
     {
       "user_id": 4,
+      "user_name": "lulu",
+      "user_email": "ar_cat@hires.com",
       "is_admin": false,
       "is_poster": true
     },
     {
       "user_id": 5,
-      "is_admin": true,
+      "user_name": "mochi",
+      "user_email": "fifi@ismycat.com",
+      "is_admin": false,
       "is_poster": true
     },
     {
       "user_id": 6,
+      "user_name": "mochi",
+      "user_email": "mochi@issomeothercat.com",
       "is_admin": false,
       "is_poster": true
     },
     {
       "user_id": 7,
-      "is_admin": true,
-      "is_poster": true
+      "user_name": "lulu",
+      "user_email": "fifi@ismycat.com",
+      "is_admin": false,
+      "is_poster": false
     },
     {
       "user_id": 8,
+      "user_name": "lulu",
+      "user_email": "user_sample@doggo.com",
       "is_admin": false,
       "is_poster": true
     },
     {
       "user_id": 9,
-      "is_admin": false,
+      "user_name": "archie",
+      "user_email": "ar_cat@hires.com",
+      "is_admin": true,
       "is_poster": true
     },
     {
       "user_id": 10,
-      "is_admin": true,
+      "user_name": "mochi",
+      "user_email": "user_sample@doggo.com",
+      "is_admin": false,
       "is_poster": true
     }
   ],
@@ -93,46 +113,164 @@
       "user_id": 10
     },
     {
-      "profile_id": 0,
+      "profile_id": 1,
       "user_id": 1
     },
     {
-      "profile_id": 1,
+      "profile_id": 2,
       "user_id": 2
     },
     {
-      "profile_id": 2,
+      "profile_id": 3,
       "user_id": 3
     },
     {
-      "profile_id": 3,
+      "profile_id": 4,
       "user_id": 4
     },
     {
-      "profile_id": 4,
+      "profile_id": 5,
       "user_id": 5
     },
     {
-      "profile_id": 5,
+      "profile_id": 6,
       "user_id": 6
     },
     {
-      "profile_id": 6,
-      "user_id": 7
-    },
-    {
-      "profile_id": 7,
+      "profile_id": 8,
       "user_id": 8
     },
     {
-      "profile_id": 8,
+      "profile_id": 9,
       "user_id": 9
     },
     {
-      "profile_id": 9,
+      "profile_id": 10,
       "user_id": 10
     }
   ],
-  "response_keys": [],
-  "responses": []
+  "response_keys": [
+    {
+      "response_key_id": 0,
+      "response_key_description": null,
+      "response_key_category": "openness",
+      "response_key_prompt": "what is your favorite color"
+    },
+    {
+      "response_key_id": 1,
+      "response_key_description": null,
+      "response_key_category": "openness",
+      "response_key_prompt": "what is your favorite color"
+    },
+    {
+      "response_key_id": 2,
+      "response_key_description": null,
+      "response_key_category": "openness",
+      "response_key_prompt": "what is the average flight speed of an unladen swallow"
+    },
+    {
+      "response_key_id": 3,
+      "response_key_description": null,
+      "response_key_category": "empath",
+      "response_key_prompt": "what is your favorite color"
+    },
+    {
+      "response_key_id": 4,
+      "response_key_description": null,
+      "response_key_category": "grit",
+      "response_key_prompt": "what is your favorite color"
+    },
+    {
+      "response_key_id": 5,
+      "response_key_description": null,
+      "response_key_category": "openness",
+      "response_key_prompt": "what is the average flight speed of an unladen swallow"
+    },
+    {
+      "response_key_id": 6,
+      "response_key_description": null,
+      "response_key_category": "grit",
+      "response_key_prompt": "what is your quest"
+    },
+    {
+      "response_key_id": 7,
+      "response_key_description": null,
+      "response_key_category": "openness",
+      "response_key_prompt": "what is the average flight speed of an unladen swallow"
+    },
+    {
+      "response_key_id": 8,
+      "response_key_description": null,
+      "response_key_category": "openness",
+      "response_key_prompt": "what is your quest"
+    },
+    {
+      "response_key_id": 9,
+      "response_key_description": null,
+      "response_key_category": "openness",
+      "response_key_prompt": "what is your favorite color"
+    }
+  ],
+  "responses": [
+    {
+      "response_id": 0,
+      "response_key_id": 0,
+      "profile_id": 1,
+      "val": "I am not a person but I need a job"
+    },
+    {
+      "response_id": 1,
+      "response_key_id": 1,
+      "profile_id": 2,
+      "val": "30"
+    },
+    {
+      "response_id": 2,
+      "response_key_id": 2,
+      "profile_id": 3,
+      "val": "This job posting is awful"
+    },
+    {
+      "response_id": 3,
+      "response_key_id": 3,
+      "profile_id": 4,
+      "val": "50"
+    },
+    {
+      "response_id": 4,
+      "response_key_id": 4,
+      "profile_id": 5,
+      "val": "80"
+    },
+    {
+      "response_id": 5,
+      "response_key_id": 5,
+      "profile_id": 6,
+      "val": "30"
+    },
+    {
+      "response_id": 6,
+      "response_key_id": 6,
+      "profile_id": 7,
+      "val": "50"
+    },
+    {
+      "response_id": 7,
+      "response_key_id": 7,
+      "profile_id": 8,
+      "val": "100"
+    },
+    {
+      "response_id": 8,
+      "response_key_id": 8,
+      "profile_id": 9,
+      "val": "I am not a person but I need a job"
+    },
+    {
+      "response_id": 9,
+      "response_key_id": 9,
+      "profile_id": 10,
+      "val": "70"
+    }
+  ]
 }
